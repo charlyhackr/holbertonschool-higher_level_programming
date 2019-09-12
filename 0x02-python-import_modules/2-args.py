@@ -3,7 +3,7 @@ if __name__ == "__main__":
     import sys
     suma = len(sys.argv)
     if suma <= 1:
-        print("0 argument.")
+        print("0 arguments.")
     else:
         if suma == 2:
             print("{:d} argument:".format(suma - 1))
