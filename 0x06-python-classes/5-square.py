@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class Square:
     def __init__(self, size):
-        """INitialize a new square    
+        """INitialize a new square
         Args:
             size int: the size of the new square.
         """
@@ -18,6 +18,7 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
+
         self.__size = value
 
     def area(self):
