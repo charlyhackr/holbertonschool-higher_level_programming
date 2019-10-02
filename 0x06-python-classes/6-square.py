@@ -7,7 +7,7 @@ class Square:
            size int : The size for  the new square
            position (int, int): the position for the new square.
         """
-        self.size =  size
+        self.size = size
         self.position = position
 
     @property
@@ -27,7 +27,7 @@ class Square:
     def position(self):
         """Getter  and setter current position of the square"""
         return (self.__position)
-    
+
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
