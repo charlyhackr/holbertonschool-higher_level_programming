@@ -4,5 +4,5 @@ def text_indentation(text):
     """
     if text is None or not isinstance(text, str) or len(text) < 0:
         raise TypeError("Text must be an string")
-    linea = "".join([cad if cad not in "?.:" else cad + "\n\n" for cad in text])
+    linea = "".join([cd if cd not in "?.:" else cd + "\n\n" for cd in text])
     print("\n".join([lin_el.strip() for lin_el in linea.split("\n")]), end="")
