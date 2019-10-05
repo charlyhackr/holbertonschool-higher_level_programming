@@ -45,3 +45,13 @@ On Errors:
     >>> print(add_integer(foo(3), -2))
     Traceback (most recent call last):
     NameError: name 'foo' is not defined
+
+    
+    >>> add_integer(5, float("nan"))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
