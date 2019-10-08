@@ -52,6 +52,6 @@ class Rectangle:
             return ("")
         width = "#" * self.width
         rectangle = width
-        for n in range(self.height - 1):
+        for x in range(self.height - 1):
             rectangle += "\n" + width
-            return (rectangle)
+        return (rectangle)
