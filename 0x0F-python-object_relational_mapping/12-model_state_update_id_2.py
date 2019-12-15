@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Changes the name of the State object with id=2 
+# Changes the name of the State object with id=2
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
