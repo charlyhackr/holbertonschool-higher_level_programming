@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# prints the first State object from the given database 
-
+# prints the first State object from the given database
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
