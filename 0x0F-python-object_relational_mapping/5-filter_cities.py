@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-# Lists all cities by state 
-
+# Lists all states from a database
+import sys
 import MySQLdb
-from sys import argv
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(port=3306, user=argv[1], passwd=argv[2], db=argv[3])
-    cursor = conn.cursor()
-    sql = "SELECT cities.id, cities.name, states.name FROM cities\
-        LEFT JOIN states ON cities.state_id = states.id\
-        WHERE states.name = %s\
-        ORDER BY cities.id ASC"
-    cursor.execute(sql, (argv[4], ))
-    cities = []
-    for data in cursor.fetchall():
-        cities.append(data[1])
-    print(', '.join(cities))
-    cursor.close()
-    conn.close()
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
+    cur.execute("""SELECT cities.name FROM
+                cities INNER JOIN states ON states.id=cities.state_id
+                WHERE states.name=%s""", (sys.argv[4],))
+    rows = cur.fetchall()
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
+    cur.close()
+    db.close()
